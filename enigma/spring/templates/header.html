@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8"/>
+	<title>Enigma - Web Development &amp; Android App</title>
+	<meta name="description" content="Creative Agency, Marketing Agency Template">
+	<meta name="keywords" content="Creative Agency, Marketing Agency">
+	<meta name="author" content="rajesh-doot">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#2e2a8f">
+	<!--website-favicon-->
+	<link href="{% static 'assets/images/favicon.png' %}" rel="icon">
+	<!--plugin-css-->
+	<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/css/plugin.min.css' %}" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<!-- template-style-->
+	<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet">
+</head>
+<body>
+	<!--Start Preloader -->
+	<div class="onloadpage" id="page_loader">
+		<div class="pre-content">
+			<div class="logo-pre"><img src="{% static 'assets/images/logo.png' %}" alt="Logo" class="img-fluid" /></div>
+			<div class="pre-text-">
+				<span>Enigma - Разработка веб-сайтов, Android приложении и продвижение СММ</span>
+			</div>
+		</div>
+	</div>
+	<!--End Preloader -->
+	<!--Start Header -->
+	<header class="nav-bg-b main-header navfix fixed-top menu-white header-pr">
+		<div class="container-fluid m-pad">
+			<div class="menu-header">
+				<div class="dsk-logo">
+					<a class="nav-brand" href="{% url 'home' %}">
+						<img src="{% static 'assets/images/white-logo.png' %}" alt="Logo" class="mega-white-logo"/>
+						<img src="{% static 'assets/images/logo.png' %}" alt="Logo" class="mega-darks-logo"/>
+					</a>
+				</div>
+			<div class="custom-nav" role="navigation">
+				<ul class="nav-list">
+					<li class="sbmenu"><a href="{% url 'home' %}" class="menu-links">Главная</a></li>
+
+					<li class="sbmenu rpdropdown"><a href="#" class="menu-links">Мы</a>
+						<div class="nx-dropdown menu-dorpdown">
+							<div class="sub-menu-section">
+								<div class="sub-menu-center-block">
+									<div class="sub-menu-column smfull">
+										<ul>
+											<li>
+												<a href="about.html" class="form-control">О нас</a>
+											</li>
+											<li>
+												<a href="team.html" class="form-control">Наша Команда</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="sbmenu"><a href="portfolio-2.html" class="menu-links">Портфолио</a></li>
+					<li class="sbmenu"><a href="service-card.html" class="menu-links">Услуги</a></li>
+					<li class="sbmenu"><a href="pricing.html" class="menu-links">Цены</a></li>
+					<li class="sbmenu rpdropdown"><a href="#" class="menu-links">Языки</a>
+						<form action="#" class="nx-dropdown menu-dorpdown">
+							<div class="sub-menu-section">
+								<div class="sub-menu-center-block">
+									<div class="sub-menu-column smfull">
+										<ul>
+											<li>
+												<button type="submit" class="form-control">Русский</button>
+											</li>
+											<li>
+												<button type="submit" class="form-control">English</button>
+											</li>
+											<li>
+												<button type="submit" class="form-control">Кыргызча</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</form>
+					</li>
+                    <li><a href="#" class="menu-links right-bddr">&nbsp;</a>
+                        <!--menu right border-->
+                        <li class="contact-show">
+                            <a href="#" class="btn-round- trngl btn-br bg-btn">
+                                <i class="fas fa-phone-alt"></i></a>
+                            <div class="contact-inquiry">
+                                <div class="contact-info-">
+                                    <div class="contct-heading">НАШИ КОНТАКТЫ</div>
+                                    <div class="inquiry-card-nn hrbg">
+                                        <div class="title-inq-c">Позвоните нам</div>
+                                        <ul>
+                                            <li>
+                                                <a href="tel:+996779609000" ><i class="fas fa-phone-alt"></i> +996 779 609-000</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-mobile"></i>
+                                                <a href="tel:+996703016683"> +996-703-01-66-83</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="inquiry-card-nn">
+                                        <div class="title-inq-c">Напишите нам</div>
+                                        <ul>
+
+                                            <li><i class="fab fa-whatsapp"></i>
+                                                <a href="https://wa.me/+996771494083">Написать на WhatsApp</a>
+                                            </li>
+                                            <li><i class="fab fa-telegram"></i>
+                                                <a href="https://t.me/edzn21">Написать на Telegram</a>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-envelope"></i>
+                                                <a href="mailto:enigmadevkg@gmail.com" >
+                                                enigmadevkg@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-br bg-btn3 btshad-b2 lnk">Контакты <span class="circle"></span></a>
+                        </li>
+                    </li>
+            </ul>
+        </div>
+        <div class="mobile-menu2">
+            <ul class="mob-nav2">
+                <li>
+                    <a href="https://wa.me/+996771494083" class="btn-round-  btn-br bg-btn btshad-b1">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </li>
+                <li class="navm-"> <a class="toggle" href="#"><span></span></a></li>
+            </ul>
+        </div>
+        </div>
+        {% include 'header_mobile.html' %}
+    </div>
+</header>
+<!--End Header -->
