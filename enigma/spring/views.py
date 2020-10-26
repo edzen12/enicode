@@ -16,3 +16,8 @@ class PostView(View):
         })
 
 
+class TeamView(View):
+    """Вывод команды на странице Team"""
+    def get(self, request):
+        team = Team.objects.all()
+        return render(request, "team.html", {"team_list": team})

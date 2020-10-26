@@ -5,6 +5,27 @@ from django.utils.safestring import mark_safe
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 from .models import *
+from django.contrib.flatpages.models import FlatPage
+# Примечание: мы переименовываем исходные Admin и Form по мере их импорта!
+from django.contrib.flatpages.admin import FlatPageAdmin as FlatPageAdminOld
+from django.contrib.flatpages.admin import FlatpageForm as FlatpageFormOld
+
+
+class FlatpageForm(FlatpageFormOld):
+    content = forms.CharField(widget=CKEditorUploadingWidget(), label="Описание")
+
+    class Meta:
+        model = FlatPage  # это не наследуется автоматически от FlatpageFormOld
+        fields = '__all__'
+
+
+class FlatPageAdmin(FlatPageAdminOld):
+    form = FlatpageForm
+
+
+# Мы должны отменить регистрацию обычного администратора, а затем перерегистрировать нашего
+admin.site.unregister(FlatPage)
+admin.site.register(FlatPage, FlatPageAdmin)
 
 
 class PostAdminForm(forms.ModelForm):
@@ -55,3 +76,6 @@ class HelpbizAdmin(admin.ModelAdmin):
 class StatisticAdmin(admin.ModelAdmin):
     list_display = ("title", "number")
 
+
+admin.site.site_title = "Enigma.kg"
+admin.site.site_header = "Enigma.kg"

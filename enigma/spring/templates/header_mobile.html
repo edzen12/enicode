@@ -2,7 +2,7 @@
 <!--Mobile Menu-->
 <nav id="main-nav">
     <ul class="first-nav">
-        <li><a href="digital-agency.html">Главная</a> </li>
+        <li><a href="{% url 'home' %}">Главная</a> </li>
         <li class="sbmenu rpdropdown"><a href="#" class="menu-links">Мы</a>
             <div class="nx-dropdown menu-dorpdown">
                 <div class="sub-menu-section">
@@ -13,7 +13,7 @@
                                     <a>О нас</a>
                                 </li>
                                 <li>
-                                    <a>Наша Команда</a>
+                                    <a href="{% url 'team' %}">Наша Команда</a>
                                 </li>
                             </ul>
                         </div>

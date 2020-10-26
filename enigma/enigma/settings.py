@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'ckeditor',
     'ckeditor_uploader',
-
     'spring.apps.SpringConfig',
 ]
 
@@ -53,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'enigma.urls'
@@ -189,9 +192,6 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-
-
-
-
+SITE_ID = 1
 
 
