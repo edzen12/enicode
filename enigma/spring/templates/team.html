@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+
+{% include 'breadcrumbs.html' %}
+
+<!--Start Team Members-->
+<section class="team pad-tb deep-dark">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="common-heading ptag">
+                    <h2>Наша команда</h2>
+                    <p class="mb0 pr-5 pl-5 pb-3">"Собраться вместе есть начало. Держаться вместе есть прогресс. Работать вместе есть успех."</p>
+                    <span>- Генри Форд</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            {% for team in team_list %}
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="full-image-card hover-scale">
+                    <div class="image-div">
+                        <a href="#">
+                            <img src="{{team.image.url}}" alt="{{team.title}}" class="img-fluid"/>
+                        </a>
+                    </div>
+                    <div class="info-text-block">
+                        <h4><a href="#">{{team.title}}</a></h4>
+                        <p>{{team.developer}}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<!--End Team Members-->
+
+{% include 'footer.html' %}

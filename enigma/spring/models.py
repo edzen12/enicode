@@ -1,4 +1,10 @@
 from django.db import models
+from django.urls import reverse
+
+
+def get_post_url(obj, viewname):
+    ct_model = obj.__class__._meta.model_name
+    return reverse(viewname, kwargs={'ct_model': ct_model, 'slug': obj.slug})
 
 
 class Category(models.Model):
@@ -45,6 +51,9 @@ class Portfolio(Post):
         verbose_name = "Портфолио"
         verbose_name_plural = "Портфолио"
 
+    def get_absolute_url(self):
+        return get_post_url(self, 'post_detail')
+
 
 class Service(Post):
     photo = models.ImageField(verbose_name="Фото", blank=True)
@@ -79,6 +88,9 @@ class Service(Post):
     class Meta:
         verbose_name = "Услуга"
         verbose_name_plural = "Услуги"
+
+    def get_absolute_url(self):
+        return get_post_url(self, 'post_detail')
 
 
 class Team(Post):
