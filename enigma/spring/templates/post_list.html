@@ -151,10 +151,12 @@
             <div class="col-lg-4 col-sm-8 mt60 wow fadeInUp" data-wow-delay="{{portfolio.speed}}s">
                 <div class="isotope_item hover-scale">
                     <div class="item-image" data-tilt data-tilt-max="2" data-tilt-speed="1000">
-                        <a href="#"><img src="{{portfolio.image.url}}" alt="image" class="img-fluid" /> </a>
+                        <a href="{{portfolio.get_absolute_url}}">
+                            <img src="{{portfolio.image.url}}" alt="image" class="img-fluid" />
+                        </a>
                     </div>
                     <div class="item-info">
-                        <h4><a href="#">{{portfolio.title}}</a></h4>
+                        <h4><a href="{{portfolio.get_absolute_url}}">{{portfolio.title}}</a></h4>
                         <p>{{portfolio.project_cat}}</p>
                     </div>
                 </div>

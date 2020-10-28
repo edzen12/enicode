@@ -1,18 +1,18 @@
 <!--Breadcrumb Area-->
-<section class="breadcrumb-area banner-4">
+<section class="breadcrumb-area banner-6">
     <div class="text-block">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 v-center">
                     <div class="bread-inner">
                         <div class="bread-menu">
-                            <ul>
-                                <li><a href="{% url 'home' %}">Главная</a></li>
-                                <li><a href="#">Team</a></li>
+                            <ul style="color: #fff">
+                                <li><a href="{% url 'home' %}" style="color: #fff">Главная</a></li>
+                                <li><a href="#" style="color: #fff">{{post.category.name}}</a></li>
                             </ul>
                         </div>
                         <div class="bread-title">
-                            <h2>Our Leaders</h2>
+                            <h2 style="color: #fff">{{post.title}}</h2>
                         </div>
                     </div>
                 </div>

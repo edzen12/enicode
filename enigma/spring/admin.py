@@ -47,7 +47,7 @@ class PortfolioAdmin(admin.ModelAdmin):
     save_on_top = True
     form = PostAdminForm
     prepopulated_fields = {"slug": ("title",)}
-    list_display = ("title", "date", "client_name", "category", "slug")
+    list_display = ("title", "date", "link_project", "category", "slug")
 
 
 @admin.register(Service)
@@ -63,7 +63,7 @@ class TeamAdmin(admin.ModelAdmin):
     save_on_top = True
     form = PostAdminForm
     prepopulated_fields = {"slug": ("title",)}
-    list_display = ("title", "category", "developer", "age", "slug")
+    list_display = ("title", "category", "age", "slug")
 
 
 @admin.register(Helpbiz)

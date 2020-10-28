@@ -36,9 +36,9 @@ class Post(models.Model):
 
 
 class Portfolio(Post):
-    client_name = models.CharField(max_length=255, verbose_name="Имя заказчика", blank=True)
+    link_project = models.CharField(max_length=255, verbose_name="Ссылка на проект", blank=True)
     project_cat = models.CharField(max_length=255, verbose_name="Технологии используемые в проекте", blank=True)
-    date = models.DateTimeField(auto_now=True, verbose_name="Дата создания проекта", blank=True)
+    date = models.CharField(max_length=255, verbose_name="Дата создания проекта", blank=True)
     speed = models.CharField(
         verbose_name="Скорость выхода поста", max_length=50, blank=True, null=True,
         help_text="Выбрать один из скоростей: 0.2, 0.4, 0.6"
@@ -94,7 +94,6 @@ class Service(Post):
 
 
 class Team(Post):
-    developer = models.CharField(max_length=225, verbose_name="Кто ты", blank=True)
     skills = models.TextField(verbose_name="Навыки члена команды", blank=True)
     age = models.PositiveIntegerField(verbose_name="Возраст", blank=True)
     telegram = models.CharField(max_length=225, verbose_name="Telegram ссылка", blank=True)

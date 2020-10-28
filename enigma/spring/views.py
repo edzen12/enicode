@@ -19,11 +19,12 @@ class PostView(View):
 class PostDetailView(DetailView):
     CT_MODEL_MODEL_CLASS = {
         'service': Service,
-        'portfolio': Portfolio
+        'portfolio': Portfolio,
+        'team': Team
     }
 
     def dispatch(self, request, *args, **kwargs):
-        self.model = CT_MODEL_MODEL_CLASS[kwargs['ct_model']]
+        self.model = self.CT_MODEL_MODEL_CLASS[kwargs['ct_model']]
         self.queryset = self.model._base_manager.all()
         return super().dispatch(request, *args, **kwargs)
 
