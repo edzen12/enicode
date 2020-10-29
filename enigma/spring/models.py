@@ -106,6 +106,9 @@ class Team(Post):
         verbose_name = "Команда"
         verbose_name_plural = "Команда"
 
+    def get_absolute_url(self):
+        return get_post_url(self, 'post_detail')
+
 
 class Helpbiz(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название")

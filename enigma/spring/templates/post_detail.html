@@ -10,14 +10,16 @@
 						<h3>{{post.title}}</h3>
 						<div class="row mt20 mb20">
 							<div class="col-md-8 col-9">
-
-								{% if post.category.slug == 'komanda' %}
-									{% include 'cat_det/team.html' %}
-								{% elif post.category.slug == 'uslugi' %}
-									{% include 'cat_det/service.html' %}
-								{% elif post.category.slug == 'portfolio' %}
-									{% include 'cat_det/portfolio.html' %}
-								{% endif %}
+								<div class="media">
+    								<div class="media-body user-info">
+										<p style="color: #000">{{post.subtitle}}</p>
+										{% if post.category.slug == 'team' %}
+											{% include 'cat_det/team.html' %}
+										{% elif post.category.slug == 'portfolio' %}
+											{% include 'cat_det/portfolio.html' %}
+										{% endif %}
+									</div>
+								</div>
 
 							</div>
 							<div class="col-md-4 col-3">

@@ -21,12 +21,12 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="full-image-card hover-scale">
                     <div class="image-div">
-                        <a href="#">
+                        <a href="{{team.get_absolute_url}}">
                             <img src="{{team.image.url}}" alt="{{team.title}}" class="img-fluid"/>
                         </a>
                     </div>
                     <div class="info-text-block">
-                        <h4><a href="#">{{team.title}}</a></h4>
+                        <h4><a href="{{team.get_absolute_url}}">{{team.title}}</a></h4>
                         <p>{{team.developer}}</p>
                     </div>
                 </div>
