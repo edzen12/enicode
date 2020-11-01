@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import View, DetailView
+from django.views.generic import View, DetailView, ListView
 
 from .models import *
 
@@ -17,6 +17,7 @@ class PostView(View):
 
 
 class PostDetailView(DetailView):
+
     CT_MODEL_MODEL_CLASS = {
         'service': Service,
         'portfolio': Portfolio,
@@ -38,3 +39,22 @@ class TeamView(View):
     def get(self, request):
         team = Team.objects.all()
         return render(request, "team.html", {"team_list": team})
+
+
+class PortfolioView(View):
+    """Вывод команды на странице Portfolio"""
+    def get(self, request):
+        portfolio = Portfolio.objects.all()
+        return render(request, "portfolio.html", {"portfolio_list": portfolio})
+
+
+class ServiceView(View):
+    """Вывод команды на странице Service"""
+    def get(self, request):
+        service = Service.objects.all()
+        return render(request, "service.html", {"service_list": service})
+
+
+
+
+

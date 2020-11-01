@@ -1,19 +1,10 @@
 {% include 'include/header.html' %}
 
-{% include 'include/breadcrumbs.html' %}
+{% include 'include/breadcrumbs_page_team.html' %}
 
 <!--Start Team Members-->
 <section class="team pad-tb deep-dark">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="common-heading ptag">
-                    <h2>Наша команда</h2>
-                    <p class="mb0 pr-5 pl-5 pb-3">"Собраться вместе есть начало. Держаться вместе есть прогресс. Работать вместе есть успех."</p>
-                    <span>- Генри Форд</span>
-                </div>
-            </div>
-        </div>
         <div class="row">
 
             {% for team in team_list %}
@@ -27,7 +18,7 @@
                     </div>
                     <div class="info-text-block">
                         <h4><a href="{{team.get_absolute_url}}">{{team.title}}</a></h4>
-                        <p>{{team.developer}}</p>
+                        <p>{{team.subtitle}}</p>
                     </div>
                 </div>
             </div>

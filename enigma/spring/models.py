@@ -65,21 +65,9 @@ class Service(Post):
         verbose_name="Background карточек на главной стр", max_length=255, blank=True, null=True,
         help_text="Выбрать один из цветов для фона: srcl1, srcl2, srcl3, srcl4, srcl5"
     )
-    tools_used_one = models.CharField(
-        max_length=125, verbose_name="Используемый инструмент #1",
-        blank=True, help_text="Необязательно для заполнения*"
-    )
-    tools_used_two = models.CharField(
-        max_length=125, verbose_name="Используемый инструмент #2",
-        blank=True, help_text="Необязательно для заполнения*"
-    )
-    tools_used_three = models.CharField(
-        max_length=125, verbose_name="Используемый инструмент #3",
-        blank=True, help_text="Необязательно для заполнения*"
-    )
-    tools_used_four = models.CharField(
-        max_length=125, verbose_name="Используемый инструмент #4",
-        blank=True, help_text="Необязательно для заполнения*"
+    tools_used = models.CharField(
+        max_length=1024, verbose_name="Используемые инструменты",
+        blank=True, help_text="При заполнении ставим знак '|' вертикальной черточки"
     )
 
     def __str__(self):
@@ -95,7 +83,7 @@ class Service(Post):
 
 class Team(Post):
     skills = models.TextField(verbose_name="Навыки члена команды", blank=True)
-    age = models.PositiveIntegerField(verbose_name="Возраст", blank=True)
+    age = models.CharField(verbose_name="Возраст", max_length=10, blank=True)
     telegram = models.CharField(max_length=225, verbose_name="Telegram ссылка", blank=True)
     instagram = models.CharField(max_length=225, verbose_name="Instagram ссылка", blank=True)
 

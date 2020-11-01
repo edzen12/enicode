@@ -2,67 +2,14 @@
 
 {% include 'include/breadcrumbs.html' %}
 
-<section class="blog-page pad-tb">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="blog-header">
-						<h3>{{post.title}}</h3>
-						<div class="row mt20 mb20">
-							<div class="col-md-8 col-9">
-								<div class="media">
-    								<div class="media-body user-info">
-										<p style="color: #000">{{post.subtitle}}</p>
-										{% if post.category.slug == 'team' %}
-											{% include 'cat_det/team.html' %}
-										{% elif post.category.slug == 'portfolio' %}
-											{% include 'cat_det/portfolio.html' %}
-										{% endif %}
-									</div>
-								</div>
 
-							</div>
-							<div class="col-md-4 col-3">
-								<div class="postwatch"><i class="far fa-eye"></i> 120</div>
-							</div>
-						</div>
-					</div>
-					<div class="image-set">
-                        <img src="{{post.image.url}}" alt="blog images"
-							 class="img-thumbnail img-fluid" style="width: auto; max-width: 600px">
-                    </div>
-                    <div class="blog-content mt30">
-                        <p>{{post.description|safe}}</p>
-                    </div>
-					<div class="blog-content mt30">
+{% if post.category.slug == 'team' %}
+	{% include 'cat_det/team.html' %}
+{% elif post.category.slug == 'portfolio' %}
+	{% include 'cat_det/portfolio.html' %}
+{% elif post.category.slug == 'service' %}
+	{% include 'cat_det/service.html' %}
+{% endif %}
 
-						<div class="row">
-							<div class="col-lg-8 col-md-8 mt30 mb30">
-								<div class="blog-post-tag">
-									<span>Категория:</span>
-									<a href="#">{{post.category.name}}</a>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 mt30 mb30">
-								<div class="blog-share-icon text-left text-md-right">
-									<span>Share: </span>
-									<a href="#"><i class="fab fa-facebook-f"></i></a>
-									<a href="#"><i class="fab fa-twitter"></i></a>
-									<a href="#"><i class="fab fa-instagram"></i></a>
-									<a href="#"><i class="fab fa-google-plus-g"></i></a>
-									<a href="#"><i class="fab fa-vimeo-v"></i></a>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-				<!--End Blog Details-->
-				<!--Start Sidebar-->
-				{% include 'include/sidebar.html' %}
-				<!--End Sidebar-->
-			</div>
-		</div>
-	</section>
 
 {% include 'include/footer.html' %}

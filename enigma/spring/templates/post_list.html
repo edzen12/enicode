@@ -15,7 +15,7 @@
                         Решение для разработки веб-сайтов и приложений для преобразования и
                         внедрения инноваций в бизнес.
                     </p>
-                    <a href="#" class="btn-main bg-btn lnk wow fadeIn"  data-wow-delay="0.8s">
+                    <a href="{% url 'portfolio' %}" class="btn-main bg-btn lnk wow fadeIn"  data-wow-delay="0.8s">
                         Посмотреть наши работы
                         <i class="fas fa-chevron-right fa-ani"></i><span class="circle"></span>
                     </a>
@@ -51,87 +51,23 @@
 </section>
 <!--End Hero-->
 <!--Start About-->
-<section class="about-sec-rpb pad-tb">
+<section class="about-sec-rpb pad-tb" style="padding-bottom: 100px;">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-10">
                 <div class="common-heading">
                     <h1 class="mb30">
-                        <span class="text-second">Компания по разработке</span>
-                        мобильных и веб-приложений с лучшим качеством
+                        <span class="text-second">ENIGMA компания по разработке</span>
+                        мобильных и веб-приложений
                     </h1>
-                    <p>Lorem Ipsum is  text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book.  is simply dummy text of the printing and typesetting industry. is simply dummy text of the printing and typesetting industry.
+                    <p> Мы - команда разработчиков, которые вот уже более 5 лет работают в IT сфере, объединившись под SpringCode, предлагаем свои IT услуги и решения во всех направлениях. Наша компания - это не только разработчики, но и дизайнеры, эксперты в продвижении CEO в интернете.
                     </p>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-<!--End About-->
-<!--Start Service-->
-<section class="service-section-prb pad-tb">
-    <div class="container">
-        <div class="row upset">
-
-            {% for service_two in service_list %}
-
-            <div  data-tilt data-tilt-max="5" data-tilt-speed="1000"
-                  class="col-lg-3-cus wow fadeInUp" data-wow-delay=".4s">
-                <div class="service-sec-list srvc-bg-nx {{service_two.back_fon}}">
-                    <img src="{{service_two.photo.url}}" alt="service">
-                    <a href="#"><h5 class="mb10">{{service_two.title}}</h5></a>
-                    <ul class="-service-list">
-                        <li> <p >{{service_two.tools_used_one}}</p> </li>
-                        <li> <p >{{service_two.tools_used_two}}</p> </li>
-                        <li> <p >{{service_two.tools_used_three}}</p> </li>
-                        <li> <p >{{service_two.tools_used_four}}</p></li>
-                    </ul>
-                    <p>{{service_two.description|truncatewords_html:10|safe}}</p>
-                </div>
-            </div>
-
-             {% endfor %}
-
-        </div>
-        <div class="-cta-btn mt70">
-            <div class="free-cta-title v-center zoomInDown wow" data-wow-delay="1.4s">
-                <p>Нанять <span>Крутых разработчиков</span></p>
-                <a href="https://wa.me/+996771494083" class="btn-main bg-btn2 lnk">Нанять сейчас
-                    <i class="fas fa-chevron-right fa-icon"></i>
-                    <span class="circle"></span>
-                </a>
             </div>
         </div>
     </div>
 </section>
-<!--End Service-->
-
-<!--Start statistics-->
-<div class="statistics-section bg-gradient6 pad-tb tilt3d">
-    <div class="container">
-        <div class="row justify-content-center t-ctr">
-
-            {% for stat in static_list %}
-
-            <div class="col-lg-3 col-sm-6">
-                <div class="statistics">
-                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
-                        <img src="{{stat.image.url}}" alt="{{static.title}}" class="img-fluid" />
-                    </div>
-                    <div class="statnumb">
-                        <span class="counter">{{stat.number}}</span><span>+</span>
-                        <p>{{stat.title}}</p>
-                    </div>
-                </div>
-            </div>
-
-            {% endfor %}
-
-        </div>
-    </div>
-</div>
-<!--End statistics-->
+<!--End About-->
 
 <!--Start Portfolio-->
 <section class="portfolio-section pad-tb">
@@ -157,7 +93,7 @@
                     </div>
                     <div class="item-info">
                         <h4><a href="{{portfolio.get_absolute_url}}">{{portfolio.title}}</a></h4>
-                        <p>{{portfolio.project_cat}}</p>
+                        <p>{{portfolio.subtitle}}</p>
                     </div>
                 </div>
             </div>
@@ -165,12 +101,34 @@
             {% endfor %}
 
             <div class="col-lg-12 col-12 col-md-12 text-center mt-5">
-                <a href="#" class="btn btn-outline">Посмотреть все проекты</a>
+                <a href="{% url 'portfolio' %}" class="btn btn-outline">Посмотреть все проекты</a>
             </div>
         </div>
     </div>
 </section>
 <!--End Portfolio-->
+
+<!--Start statistics-->
+<div class="statistics-section bg-gradient6 pad-tb tilt3d">
+    <div class="container">
+        <div class="row justify-content-center t-ctr">
+            {% for stat in static_list %}
+            <div class="col-lg-3 col-sm-6">
+                <div class="statistics">
+                    <div data-tilt data-tilt-max="20" data-tilt-speed="1000" class="statistics-img">
+                        <img src="{{stat.image.url}}" alt="{{static.title}}" class="img-fluid" />
+                    </div>
+                    <div class="statnumb">
+                        <span class="counter">{{stat.number}}</span><span>+</span>
+                        <p>{{stat.title}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--End statistics-->
 
 <!--Start work-category-->
 <section class="work-category pad-tb">
@@ -178,9 +136,12 @@
         <div class="row">
             <div class="col-lg-4 v-center">
                 <div class="common-heading text-l">
-                    <span>Industries we work for</span>
-                    <h2>Helping Businesses in All Domains</h2>
-                    <p>Successfully delivered digital products Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <span>it service</span>
+                    <h2>ОТРАСЛИ, В КОТОРОЙ МЫ РАБОТАЕМ</h2>
+                    <p>
+                        Обеспечивая надежную работу IT и отличный сервис, мы не останавливаемся на достигнутом.
+Наши специалисты изучают, тестируют, проверяют, чтобы всегда предлагать Вам самое лучшее.
+                    </p>
                 </div>
             </div>
             <div class="col-lg-8">
